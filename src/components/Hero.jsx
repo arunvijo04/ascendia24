@@ -19,16 +19,16 @@ function Hero() {
 
             {/* Content Container */}
             <div className="bg-[#f5e4f5] rounded-[45px] p-10 relative z-10 flex flex-col items-center text-center mx-4 md:mx-0">
-                <h1 className="text-[#05709c] text-[8vw] md:text-[160px] font-extrabold font-['Rubik']">
+                <h1 className="text-[#05709c] text-[12vw] md:text-[160px] font-extrabold font-['Oswald'] transform transition-transform duration-700 ease-in-out hover:scale-105">
                     ASCENDIA
                 </h1>
-                <div className="mt-4">
-                    <span className="text-black text-[4vw] md:text-5xl font-medium font-['Roboto']">2 Day Camp organized by </span>
-                    <span className="text-[#05709c] text-[4vw] md:text-5xl font-medium font-['Roboto'] animate-writing">WIE RSET</span>
+                <div className="mt-4 text-[4vw] md:text-5xl font-medium font-['Roboto']">
+                    <span className="text-black">2 Day Camp organized by </span>
+                    <span className="text-[#05709c] relative after:absolute after:top-0 after:right-0 after:h-full after:border-r-[3px] after:border-[#05709c] animate-typing">WIE RSET</span>
                 </div>
                 <button
                     onClick={handleRegisterClick}
-                    className="mt-6 w-[80vw] md:w-[319px] h-[10vh] md:h-[72.39px] bg-[#e0ade0] rounded-[20px] flex justify-center items-center shadow-md hover:bg-[#d295d2] transition duration-300"
+                    className="mt-6 w-[80vw] md:w-[319px] h-[10vh] md:h-[72.39px] bg-[#e0ade0] rounded-[20px] flex justify-center items-center shadow-md hover:bg-[#d295d2] hover:scale-105 transition-transform duration-300"
                 >
                     <span className="text-black text-[5vw] md:text-[40px] font-extrabold font-['Roboto']">Register Now</span>
                 </button>

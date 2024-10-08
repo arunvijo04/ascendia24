@@ -8,13 +8,13 @@ function Contact() {
 
             {/* Title */}
             <div className="absolute bottom-0 w-full text-center">
-                <div className="text-white text-[28vw] font-black font-['Inter'] z-0 pointer-events-none">
-                    contact
+                <div className="text-white text-[20vw] md:text-[28vw] font-extrabold tracking-tight font-['Poppins'] z-0 pointer-events-none">
+                    Contact
                 </div>
             </div>
 
             {/* Map and Form Container */}
-            <div className="flex justify-center items-center flex-wrap absolute w-full top-1/2 transform -translate-y-1/2 p-4">
+            <div className="flex flex-col md:flex-row justify-center items-center absolute w-full top-1/2 transform -translate-y-1/2 p-4 space-y-8 md:space-y-0 md:space-x-8">
                 {/* Embedded Map */}
                 <div className="w-full md:w-1/2 h-64 md:h-80 lg:h-[400px] p-4">
                     <iframe
@@ -28,29 +28,29 @@ function Contact() {
 
                 {/* Submission Form */}
                 <div className="w-full md:w-1/2 p-4">
-                    <form className="bg-[#edcaec]/50 rounded-[80px] p-8">
+                    <form className="bg-[#edcaec]/50 rounded-[40px] p-6 md:p-8 shadow-lg">
                         <div className="mb-6">
-                            <label className="block mb-2 text-black font-bold">Name</label>
+                            <label className="block mb-2 text-black font-bold text-sm md:text-base">Name</label>
                             <input
                                 type="text"
-                                className="w-full h-12 px-4 rounded-[40px] border-2 border-gray-300 focus:outline-none"
+                                className="w-full h-12 px-4 rounded-[40px] border-2 border-gray-300 focus:outline-none focus:border-[#ecc9f5] transition duration-300"
                                 placeholder="Enter your name"
                                 required
                             />
                         </div>
                         <div className="mb-6">
-                            <label className="block mb-2 text-black font-bold">Email</label>
+                            <label className="block mb-2 text-black font-bold text-sm md:text-base">Email</label>
                             <input
                                 type="email"
-                                className="w-full h-12 px-4 rounded-[40px] border-2 border-gray-300 focus:outline-none"
+                                className="w-full h-12 px-4 rounded-[40px] border-2 border-gray-300 focus:outline-none focus:border-[#ecc9f5] transition duration-300"
                                 placeholder="Enter your email"
                                 required
                             />
                         </div>
                         <div className="mb-6">
-                            <label className="block mb-2 text-black font-bold">Message</label>
+                            <label className="block mb-2 text-black font-bold text-sm md:text-base">Message</label>
                             <textarea
-                                className="w-full h-32 px-4 rounded-[40px] border-2 border-gray-300 focus:outline-none"
+                                className="w-full h-32 px-4 rounded-[40px] border-2 border-gray-300 focus:outline-none focus:border-[#ecc9f5] transition duration-300"
                                 placeholder="Your message here"
                                 required
                             />
@@ -63,7 +63,7 @@ function Contact() {
             </div>
 
             {/* Copyright Information */}
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-black text-xl font-semibold font-['Inter'] text-center">
+            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-black text-sm md:text-xl font-semibold font-['Poppins'] text-center">
                 <div>COPYRIGHT WIE RSET. ALL RIGHTS RESERVED.</div>
                 <div>DESIGNED BY ARUN VIJO</div>
             </div>
