@@ -5,16 +5,18 @@ function Contact() {
         <div id="contact" className="w-full h-screen relative">
             {/* Background Overlay */}
             <div className="absolute inset-0 bg-[#ecc9eb]/40" />
-            
+
             {/* Title */}
-            <div className="absolute w-full top-1/4 text-white text-[350px] font-black font-['Inter'] text-center">
-                contact
+            <div className="absolute bottom-0 w-full text-center">
+                <div className="text-white text-[28vw] font-black font-['Inter'] z-0 pointer-events-none">
+                    contact
+                </div>
             </div>
 
             {/* Map and Form Container */}
-            <div className="flex justify-center items-center flex-wrap absolute w-full top-1/2 transform -translate-y-1/2">
+            <div className="flex justify-center items-center flex-wrap absolute w-full top-1/2 transform -translate-y-1/2 p-4">
                 {/* Embedded Map */}
-                <div className="w-full md:w-1/2 h-[400px] p-4">
+                <div className="w-full md:w-1/2 h-64 md:h-80 lg:h-[400px] p-4">
                     <iframe
                         title="Google Map"
                         className="w-full h-full rounded-lg"
@@ -25,7 +27,7 @@ function Contact() {
                 </div>
 
                 {/* Submission Form */}
-                <div className="w-full md:w-1/2 h-auto p-4">
+                <div className="w-full md:w-1/2 p-4">
                     <form className="bg-[#edcaec]/50 rounded-[80px] p-8">
                         <div className="mb-6">
                             <label className="block mb-2 text-black font-bold">Name</label>

@@ -3,23 +3,45 @@ import faq from '../assets/faq.png';
 
 function FAQ() {
     return (
-        <div className="w-[1400px] h-[1000px] relative">
-            <div className="absolute top-1/2 transform -translate-y-1/2 text-[#ecc9eb]/40 text-[500px] font-black font-['Inter'] w-full text-center">
-                faq
+        <div className="w-full min-h-screen flex flex-col md:flex-row items-center bg-white relative">
+            {/* FAQ Background Text */}
+            <div className="absolute inset-0 flex items-center justify-center z-0">
+                <div className="text-[#ecc9eb] text-[20vw] md:text-[500px] font-black font-['Inter'] text-center">
+                    faq
+                </div>
             </div>
-            <div className="w-[719px] h-[972px] left-[628px] top-0 absolute">
-                <div className="w-[558px] h-[118px] left-[87px] top-[481px] absolute bg-[#d9d9d9]/0 rounded-[40px] border-8 border-[#dde9f5]" />
-                <div className="w-[572px] h-[124px] left-[87px] top-[640px] absolute bg-[#d9d9d9]/0 rounded-[40px] border-8 border-[#dde9f5]" />
-                <div className="left-[139px] top-[182px] absolute text-black text-5xl font-medium font-['Inter']">registration cost?</div>
-                <div className="left-[114px] top-[511px] absolute text-black text-5xl font-medium font-['Inter']">mode of hackathon?</div>
-                <div className="left-[139px] top-[665px] absolute text-black text-5xl font-medium font-['Inter']">can we register a team?</div>
-                <div className="left-[132px] top-[830px] absolute text-black text-5xl font-medium font-['Inter']">time period of product<br/>development phase?</div>
-                <div className="left-[127px] top-[352px] absolute text-black text-5xl font-medium font-['Inter']">participation criteria?</div>
-                <div className="w-[574px] h-[121px] left-[85px] top-[315px] absolute bg-[#d9d9d9]/0 rounded-[40px] border-8 border-[#dde9f5]" />
-                <div className="w-[597px] h-[119px] left-[87px] top-[155px] absolute bg-[#d9d9d9]/0 rounded-[40px] border-8 border-[#dde9f5]" />
-                <div className="w-[632px] h-[163px] left-[87px] top-[809px] absolute bg-[#d9d9d9]/0 rounded-[40px] border-8 border-[#dde9f5]" />
+
+            {/* Left Side: Image */}
+            <div className="md:w-1/2 h-full relative z-10">
+                <img
+                    className="w-full h-full object-cover"
+                    src={faq}
+                    alt="FAQ Background"
+                />
             </div>
-            <img className="w-[720px] h-[760px] left-0 top-[155px] absolute" src={faq} alt="FAQ Background" />
+
+            {/* Right Side: FAQ Content */}
+            <div className="w-full md:w-1/2 flex flex-col items-center p-6 z-20 mt-10 md:mt-0">
+                {/* Questions */}
+                <div className="w-full flex flex-col space-y-4">
+                    {[
+                        "Registration Cost?",
+                        "Mode of Hackathon?",
+                        "Can We Register a Team?",
+                        "Time Period of Product Development Phase?",
+                        "Participation Criteria?"
+                    ].map((question, index) => (
+                        <div
+                            key={index}
+                            className="p-6 bg-[#ffe0f0] rounded-[40px] border-8 border-[#ffb3c1] flex flex-col transition-all duration-300 hover:bg-[#ffc9d9] hover:shadow-lg cursor-pointer"
+                        >
+                            <h3 className="text-black text-3xl font-medium font-['Inter']">
+                                {question}
+                            </h3>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }
