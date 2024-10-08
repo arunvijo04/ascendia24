@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import bg from '../assets/bg.png';
+import { motion } from 'framer-motion';
 
 function Hero() {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -12,25 +13,59 @@ function Hero() {
         setModalOpen(false);
     };
 
+    // Landing page animation settings
+    const landingPageVariants = {
+        initial: { opacity: 0, y: 50 },
+        animate: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: "easeOut",
+            },
+        },
+    };
+
+    // Full description text
+    const description = "2 Day Camp organized by WIE RSET";
+
     return (
-        <div id="hero" className="w-full h-screen relative flex flex-col items-center justify-center overflow-hidden">
+        <motion.div 
+            id="hero" 
+            className="w-full h-screen relative flex flex-col items-center justify-center overflow-hidden" 
+            variants={landingPageVariants}
+            initial="initial"
+            animate="animate"
+        >
             {/* Background Image */}
             <img className="w-full h-full object-cover absolute top-0 left-0 z-0" src={bg} alt="Background" />
 
             {/* Content Container */}
-            <div className="bg-[#f5e4f5] rounded-[45px] p-10 relative z-10 flex flex-col items-center text-center mx-4 md:mx-0">
-                <h1 className="text-[#05709c] text-[12vw] md:text-[160px] font-extrabold font-['Oswald'] transform transition-transform duration-700 ease-in-out hover:scale-105">
+            <div className="bg-[#f5e4f5] rounded-[45px] p-8 relative z-10 flex flex-col items-center text-center mx-4 md:mx-0">
+                <h1 className="text-[#05709c] text-[10vw] md:text-[160px] font-extrabold font-['Oswald'] transform transition-transform duration-700 ease-in-out hover:scale-105">
                     ASCENDIA
                 </h1>
-                <div className="mt-4 text-[4vw] md:text-5xl font-medium font-['Roboto']">
-                    <span className="text-black">2 Day Camp organized by </span>
-                    <span className="text-[#05709c] relative after:absolute after:top-0 after:right-0 after:h-full after:border-r-[3px] after:border-[#05709c] animate-typing">WIE RSET</span>
+                <div className="mt-2 flex items-center justify-center text-[4vw] md:text-5xl font-medium font-['Roboto']">
+                    {description.split('').map((char, index) => (
+                        <motion.span
+                            key={index}
+                            initial={{ opacity: 0, y: 10 }} // Start from invisible and slightly below
+                            animate={{ opacity: 1, y: 0 }} // Animate to visible and original position
+                            transition={{
+                                duration: 0.5, // Duration for each character animation
+                                delay: index * 0.1 // Delay based on character index
+                            }}
+                            style={{ display: 'inline-block' }} // Ensure characters are displayed inline
+                        >
+                            {char === ' ' ? '\u00A0' : char} {/* Render a non-breaking space for visual consistency */}
+                        </motion.span>
+                    ))}
                 </div>
                 <button
                     onClick={handleRegisterClick}
-                    className="mt-6 w-[80vw] md:w-[319px] h-[10vh] md:h-[72.39px] bg-[#e0ade0] rounded-[20px] flex justify-center items-center shadow-md hover:bg-[#d295d2] hover:scale-105 transition-transform duration-300"
+                    className="mt-4 w-[80vw] md:w-[319px] h-[8vh] md:h-[72.39px] bg-[#e0ade0] rounded-[20px] flex justify-center items-center shadow-md hover:bg-[#d295d2] hover:scale-105 transition-transform duration-300"
                 >
-                    <span className="text-black text-[5vw] md:text-[40px] font-extrabold font-['Roboto']">Register Now</span>
+                    <span className="text-black text-[4vw] md:text-[40px] font-extrabold font-['Roboto']">Register Now</span>
                 </button>
             </div>
 
@@ -54,7 +89,7 @@ function Hero() {
                     </div>
                 </div>
             )}
-        </div>
+        </motion.div>
     );
 }
 

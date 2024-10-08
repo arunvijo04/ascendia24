@@ -11,7 +11,6 @@ function Timeline() {
             img: registration,
             side: 'left',
             bgColor: 'bg-[#ffe0f0]', // Light pink
-            icon: inauguration,
         },
         {
             date: '18TH OCTOBER 2024',
@@ -20,7 +19,6 @@ function Timeline() {
             img: inauguration,
             side: 'right',
             bgColor: 'bg-[#ffb3c1]', // Medium pink
-            icon: inauguration,
         },
         {
             date: '18TH OCTOBER 2024',
@@ -29,7 +27,6 @@ function Timeline() {
             img: null,
             side: 'left',
             bgColor: 'bg-[#ffe0f0]',
-            icon: inauguration,
         },
         {
             date: '18TH OCTOBER 2024',
@@ -38,7 +35,6 @@ function Timeline() {
             img: null,
             side: 'right',
             bgColor: 'bg-[#ffb3c1]',
-            icon: inauguration,
         },
         {
             date: '18TH OCTOBER 2024',
@@ -47,7 +43,6 @@ function Timeline() {
             img: null,
             side: 'left',
             bgColor: 'bg-[#ffe0f0]',
-            icon: inauguration,
         }
     ];
 
@@ -59,7 +54,6 @@ function Timeline() {
             img: null,
             side: 'right',
             bgColor: 'bg-[#ffb3c1]',
-            icon: inauguration,
         },
         {
             date: '19TH OCTOBER 2024',
@@ -68,7 +62,6 @@ function Timeline() {
             img: null,
             side: 'left',
             bgColor: 'bg-[#ffe0f0]',
-            icon: inauguration,
         },
         {
             date: '19TH OCTOBER 2024',
@@ -77,7 +70,6 @@ function Timeline() {
             img: null,
             side: 'right',
             bgColor: 'bg-[#ffb3c1]',
-            icon: inauguration,
         },
         {
             date: '19TH OCTOBER 2024',
@@ -86,7 +78,6 @@ function Timeline() {
             img: null,
             side: 'left',
             bgColor: 'bg-[#ffe0f0]',
-            icon: inauguration,
         },
         {
             date: '19TH OCTOBER 2024',
@@ -95,7 +86,6 @@ function Timeline() {
             img: null,
             side: 'right',
             bgColor: 'bg-[#ffb3c1]',
-            icon: inauguration,
         },
         {
             date: '19TH OCTOBER 2024',
@@ -104,7 +94,6 @@ function Timeline() {
             img: null,
             side: 'left',
             bgColor: 'bg-[#ffe0f0]',
-            icon: inauguration,
         },
         {
             date: '19TH OCTOBER 2024',
@@ -113,7 +102,6 @@ function Timeline() {
             img: null,
             side: 'right',
             bgColor: 'bg-[#ffb3c1]',
-            icon: inauguration,
         }
     ];
 
@@ -123,15 +111,15 @@ function Timeline() {
     useEffect(() => {
         const scroll = () => {
             if (!isHovered) {
-                const scrollTop = timelineRef.current.scrollTop;
-                timelineRef.current.scrollTop = scrollTop + 1;
-                if (scrollTop >= timelineRef.current.scrollHeight - timelineRef.current.clientHeight) {
-                    timelineRef.current.scrollTop = 0;
+                const scrollLeft = timelineRef.current.scrollLeft;
+                timelineRef.current.scrollLeft = scrollLeft + 1; // Adjust speed here
+                if (scrollLeft >= timelineRef.current.scrollWidth - timelineRef.current.clientWidth) {
+                    timelineRef.current.scrollLeft = 0;
                 }
             }
         };
 
-        const interval = setInterval(scroll, 50);
+        const interval = setInterval(scroll, 50); // Adjust the interval for scrolling speed
         return () => clearInterval(interval);
     }, [isHovered]);
 
@@ -139,7 +127,7 @@ function Timeline() {
         <div className="w-full min-h-screen relative flex flex-col items-center overflow-hidden p-4 bg-gradient-to-b from-white to-[#fef9fc]">
             {/* Centered Background Text */}
             <div className="absolute top-1/4 transform -translate-y-1/2 text-[#ecc9eb]/20 text-[10vw] md:text-[150px] font-black font-['Inter'] text-center z-0 pointer-events-none">
-                Timeline
+                timeline
             </div>
 
             {/* Day 1 Events */}
@@ -147,7 +135,7 @@ function Timeline() {
                 <h2 className="text-lg font-bold text-gray-800 mb-2">Day 1: 18TH OCTOBER 2024</h2>
                 <div 
                     ref={timelineRef} 
-                    className="flex items-center w-full justify-between overflow-x-scroll whitespace-nowrap scrollbar-hide"
+                    className="flex items-center w-full justify-start overflow-x-hidden whitespace-nowrap scrollbar-hide"
                     onMouseEnter={() => setIsHovered(true)} 
                     onMouseLeave={() => {
                         setTimeout(() => setIsHovered(false), 1000); // Resume after 1 second
@@ -156,18 +144,15 @@ function Timeline() {
                     {eventsRow1.map((event, index) => (
                         <div 
                             key={index} 
-                            className={`relative flex-none w-[200px] h-[100px] ${event.bgColor} rounded-[20px] border-4 border-[#d6d8e6] mx-4 flex items-center transition-all duration-300 hover:shadow-xl`}
+                            className={`relative flex-none w-[300px] h-[120px] ${event.bgColor} rounded-[20px] border-4 border-[#d6d8e6] mx-4 flex items-center transition-all duration-300 hover:shadow-xl`}
                         >
-                            <div className={`absolute ${event.side === 'left' ? 'left-[60px]' : 'right-[60px]'} text-black text-md font-semibold`}>
+                            <div className={`absolute ${event.side === 'left' ? 'left-[20px]' : 'right-[20px]'} text-black text-md font-semibold text-center`}>
                                 <div className="text-md font-bold">{event.title}</div>
                                 <div className="text-sm text-gray-600">{event.date} - {event.time}</div>
                             </div>
-                            <img 
-                                className={`w-[30px] h-[30px] absolute ${event.side === 'left' ? 'left-[-20px]' : 'right-[-20px]'} bottom-2`} 
-                                src={event.icon} 
-                                alt="Checkpoint" 
-                            />
-                            <img className={`w-[50px] h-[50px] absolute ${event.side === 'left' ? 'left-[-20px]' : 'right-[-20px]'} bottom-2`} src={event.img} alt={event.title} />
+                            {event.img && (
+                                <img className={`w-[70px] h-[70px] absolute ${event.side === 'left' ? 'left-[-20px]' : 'right-[-20px]'} bottom-2`} src={event.img} alt={event.title} />
+                            )}
                         </div>
                     ))}
                 </div>
@@ -182,7 +167,7 @@ function Timeline() {
                 <h2 className="text-lg font-bold text-gray-800 mb-2">Day 2: 19TH OCTOBER 2024</h2>
                 <div 
                     ref={timelineRef} 
-                    className="flex items-center w-full justify-between overflow-x-scroll whitespace-nowrap scrollbar-hide"
+                    className="flex items-center w-full justify-start overflow-x-hidden whitespace-nowrap scrollbar-hide"
                     onMouseEnter={() => setIsHovered(true)} 
                     onMouseLeave={() => {
                         setTimeout(() => setIsHovered(false), 1000); // Resume after 1 second
@@ -191,18 +176,15 @@ function Timeline() {
                     {eventsRow2.map((event, index) => (
                         <div 
                             key={index} 
-                            className={`relative flex-none w-[200px] h-[100px] ${event.bgColor} rounded-[20px] border-4 border-[#d6d8e6] mx-4 flex items-center transition-all duration-300 hover:shadow-xl`}
+                            className={`relative flex-none w-[300px] h-[120px] ${event.bgColor} rounded-[20px] border-4 border-[#d6d8e6] mx-4 flex items-center transition-all duration-300 hover:shadow-xl`}
                         >
-                            <div className={`absolute ${event.side === 'left' ? 'left-[60px]' : 'right-[60px]'} text-black text-md font-semibold`}>
+                            <div className={`absolute ${event.side === 'left' ? 'left-[20px]' : 'right-[20px]'} text-black text-md font-semibold text-center`}>
                                 <div className="text-md font-bold">{event.title}</div>
                                 <div className="text-sm text-gray-600">{event.date} - {event.time}</div>
                             </div>
-                            <img 
-                                className={`w-[30px] h-[30px] absolute ${event.side === 'left' ? 'left-[-20px]' : 'right-[-20px]'} bottom-2`} 
-                                src={event.icon} 
-                                alt="Checkpoint" 
-                            />
-                            <img className={`w-[50px] h-[50px] absolute ${event.side === 'left' ? 'left-[-20px]' : 'right-[-20px]'} bottom-2`} src={event.img} alt={event.title} />
+                            {event.img && (
+                                <img className={`w-[70px] h-[70px] absolute ${event.side === 'left' ? 'left-[-20px]' : 'right-[-20px]'} bottom-2`} src={event.img} alt={event.title} />
+                            )}
                         </div>
                     ))}
                 </div>

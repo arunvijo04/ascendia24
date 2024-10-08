@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import rset from '../assets/rset.png';
 import girl from '../assets/girl.png';
+import { motion } from 'framer-motion';
 
 function About() {
     const [isVisible, setIsVisible] = useState(false);
@@ -11,6 +12,19 @@ function About() {
             setIsVisible(true);
         }, 200); // Delay the visibility a little to make it smoother
     }, []);
+
+    // Define the bubble effect animation variants
+    const bubbleVariants = {
+        initial: { opacity: 0, scale: 0.8 },
+        animate: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.5,
+                ease: 'easeOut',
+            },
+        },
+    };
 
     return (
         <div id="about" className="relative w-full min-h-screen overflow-hidden">
@@ -50,12 +64,25 @@ function About() {
                     />
                     <div className={`mt-4 transition-opacity duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <h2 className="text-black text-[6vw] md:text-[64px] font-extrabold font-['Roboto']">What is ASCENDIA?</h2>
-                        <p className="text-black text-[4vw] md:text-[28px] font-normal font-['Roboto']">
+                        
+                        {/* Paragraphs with bubble effect */}
+                        <motion.p
+                            initial="initial"
+                            animate={isVisible ? "animate" : "initial"}
+                            variants={bubbleVariants}
+                            className="text-black text-[4vw] md:text-[28px] font-normal font-['Roboto'] mt-4"
+                        >
                             Ascendia is a two-day upskilling camp exclusively designed for girls, focusing on both soft and technical skills development. While women are often celebrated for their commitment and excellence, they sometimes face barriers due to a lack of specific skills. Ascendia aims to bridge these gaps, empowering participants to discover their potential and guide them on a path of personal and professional growth.
-                        </p>
-                        <p className="text-black text-[4vw] md:text-[28px] font-normal font-['Roboto'] mt-4">
+                        </motion.p>
+
+                        <motion.p
+                            initial="initial"
+                            animate={isVisible ? "animate" : "initial"}
+                            variants={bubbleVariants}
+                            className="text-black text-[4vw] md:text-[28px] font-normal font-['Roboto'] mt-4"
+                        >
                             Through dynamic workshops, hands-on technical training, and engaging activities handled by professionals, Ascendia helps participants build confidence and equips them with tools to excel. This event fosters an environment where learning is both fun and impactful, preparing girls to rise up and lead the future with confidence.
-                        </p>
+                        </motion.p>
                     </div>
                 </div>
             </div>
