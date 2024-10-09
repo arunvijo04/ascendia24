@@ -9,7 +9,7 @@ function Event() {
     return (
         <div id="event" className="relative w-full min-h-screen flex items-center justify-center">
             {/* Background Text */}
-            <div className="absolute top-1/2 transform -translate-y-1/2 text-[#ecc9eb]/20 text-[25vw] md:text-[500px] font-black font-['Inter'] w-full text-center z-0 pointer-events-none">
+            <div className="absolute top-1/2 transform -translate-y-1/2 text-[#ecc9eb]/40 text-[25vw] md:text-[500px] font-black font-rubik-mono-one-regular w-full text-center z-0 pointer-events-none">
                 event
             </div>
 

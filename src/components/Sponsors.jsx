@@ -21,8 +21,8 @@ function Sponsors() {
             <div className="absolute inset-0 bg-[#ecc9eb]/40 opacity-90 animate-fade" />
 
             {/* Section Title */}
-            <div className="absolute top-1/2 transform -translate-y-1/2 text-white text-[12vw] md:text-[400px] font-black font-['Inter'] w-full text-center">
-                Sponsors
+            <div className="absolute top-1/2 transform -translate-y-1/2 text-white text-[12vw] md:text-[340px] font-black font-rubik-mono-one-regular w-full text-center">
+                sponsors
             </div>
 
             {/* Sponsors Boxes */}

@@ -12,7 +12,7 @@ function FAQ() {
         <div className="w-full min-h-screen flex flex-col md:flex-row items-center bg-white relative">
             {/* FAQ Background Text */}
             <div className="absolute inset-0 flex items-center justify-center z-0">
-                <div className="text-[#ecc9eb] text-[20vw] md:text-[500px] font-black font-['Inter'] text-center">
+                <div className="text-[#ecc9eb]/40 text-[20vw] md:text-[500px] font-black font-rubik-mono-one-regular text-center">
                     faq
                 </div>
             </div>

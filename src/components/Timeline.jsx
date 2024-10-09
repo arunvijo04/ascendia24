@@ -109,7 +109,7 @@ function Timeline() {
 
     return (
         <div className="w-full min-h-screen relative flex flex-col items-center justify-center overflow-hidden p-6 bg-gradient-to-b from-white to-[#fef9fc] space-y-10">
-            <div className="absolute top-20 text-[#ecc9eb]/20 text-[12vw] md:text-[150px] font-black font-['Inter'] text-center z-0 pointer-events-none">
+            <div className="absolute top-1/2 transform -translate-y-1/2 text-[#ecc9eb]/40 text-[12vw] md:text-[350px] font-black font-rubik-mono-one-regular w-full text-center">
                 timeline
             </div>
 

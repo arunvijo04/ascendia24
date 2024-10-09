@@ -8,8 +8,8 @@ function Contact() {
 
             {/* Title */}
             <div className="absolute inset-0 w-full h-full flex items-center justify-center md:justify-start">
-                <div className="text-white text-[20vw] md:text-[28vw] font-extrabold tracking-tight font-['Poppins'] z-0 pointer-events-none md:ml-8">
-                    Contact
+                <div className="text-white text-[25vw] md:text-[25vw] font-extrabold  font-rubik-mono-one-regular  md:ml-8">
+                    contact
                 </div>
             </div>
 

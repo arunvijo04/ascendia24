@@ -27,8 +27,8 @@ function About() {
     return (
         <div id="about" className="relative w-full min-h-screen overflow-hidden">
             <div className="absolute inset-0 bg-[#ecc9eb]/40 transition-opacity duration-700" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <div className="text-white text-[12vw] md:text-[450px] font-black font-['Inter'] opacity-50">about</div>
+            <div className="absolute top-1/2 transform -translate-y-1/2 text-white text-[12vw] md:text-[350px] font-black font-rubik-mono-one-regular w-full text-center">
+                speakers
             </div>
 
             <div className="relative container mx-auto flex flex-col md:flex-row items-start justify-between p-4 md:p-8">

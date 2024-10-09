@@ -28,18 +28,18 @@ function Nav() {
                         to={section}
                         smooth={true}
                         duration={500}
-                        className="relative block md:inline-block text-black text-[10px] md:text-4xl font-rubik-mono-two-regular cursor-pointer hover:text-[#a594f9] transition duration-300 ease-in-out"
+                        className="relative block md:inline-block text-black text-[10px] md:text-4xl font-roboto-bold cursor-pointer hover:text-[#a594f9] transition duration-300 ease-in-out"
                         onClick={toggleNav}
                     >
                         {section.toUpperCase()}
-                        <span className="absolute inset-0 bg-transparent hover:bg-[#a594f9] transition duration-300 ease-in-out" style={{ borderRadius: '5px' }}></span>
+                        <span className="absolute inset-0 bg-transparent hover:bg-[#e0d5f2] transition duration-300 ease-in-out opacity-50" style={{ borderRadius: '5px' }}></span>
                     </Link>
                 ))}
                 <Link 
                     to="register" 
                     smooth={true} 
                     duration={500} 
-                    className="relative block md:inline-block text-white bg-[#a594f9] px-4 py-2 rounded-md text-lg font-medium cursor-pointer hover:bg-[#8a7bd3] transition duration-300 ease-in-out"
+                    className="relative block md:inline-block text-white bg-[#a594f9] px-4 py-2 rounded-md text-lg font-roboto-bold cursor-pointer hover:bg-[#8a7bd3] transition duration-300 ease-in-out"
                     onClick={toggleNav}
                 >
                     REGISTER NOW
