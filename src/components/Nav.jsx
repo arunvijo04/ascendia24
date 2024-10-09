@@ -21,14 +21,14 @@ function Nav() {
             </div>
 
             {/* Navigation Links */}
-            <nav className={`md:flex items-center space-x-8 absolute md:relative left-0 w-full md:w-auto bg-white md:bg-transparent transition-all duration-500 ease-in-out ${navOpen ? 'top-[70px] opacity-100' : 'top-[-100%] opacity-0'} md:opacity-100 md:top-0`}>
+            <nav className={`md:flex items-center space-x-8 absolute md:relative left-0 w-full md:w-auto bg-white md:bg-transparent transition-all duration-500 ease-in-out ${navOpen ? 'top-[70px] opacity-100' : 'top-[-100%] opacity-0'} md:opacity-100 md:top-0 md:justify-end`}>
                 {['home', 'about', 'event', 'contact'].map(section => (
                     <Link 
                         key={section}
                         to={section}
                         smooth={true}
                         duration={500}
-                        className="relative block md:inline-block text-black text-[10px] md:text-4xl font-roboto-bold cursor-pointer hover:text-[#a594f9] transition duration-300 ease-in-out"
+                        className="relative block md:inline-block text-black text-lg md:text-xl font-sans cursor-pointer hover:text-[#a594f9] transition duration-300 ease-in-out"
                         onClick={toggleNav}
                     >
                         {section.toUpperCase()}
@@ -39,7 +39,7 @@ function Nav() {
                     to="register" 
                     smooth={true} 
                     duration={500} 
-                    className="relative block md:inline-block text-white bg-[#a594f9] px-4 py-2 rounded-md text-lg font-roboto-bold cursor-pointer hover:bg-[#8a7bd3] transition duration-300 ease-in-out"
+                    className="relative block md:inline-block text-white bg-[#a594f9] px-6 py-3 rounded-md text-lg md:text-xl font-sans cursor-pointer hover:bg-[#8a7bd3] transition duration-300 ease-in-out"
                     onClick={toggleNav}
                 >
                     REGISTER NOW

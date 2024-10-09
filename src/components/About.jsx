@@ -7,9 +7,10 @@ function About() {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setIsVisible(true);
         }, 200);
+        return () => clearTimeout(timer);
     }, []);
 
     const bubbleVariants = {
@@ -24,67 +25,66 @@ function About() {
         },
     };
 
+    const fadeInVariants = {
+        initial: { opacity: 0, y: 20 },
+        animate: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.7,
+                ease: 'easeOut',
+            },
+        },
+    };
+
     return (
         <div id="about" className="relative w-full min-h-screen overflow-hidden">
             <div className="absolute inset-0 bg-[#ecc9eb]/40 transition-opacity duration-700" />
-            <div className="absolute top-1/2 transform -translate-y-1/2 text-white text-[12vw] md:text-[350px] font-black font-rubik-mono-one-regular w-full text-center">
-                speakers
+            <div className="absolute top-1/2 transform -translate-y-1/2 text-white text-[12vw] md:text-[500px] font-black font-rubik-mono-one-regular w-full text-center">
+                about
             </div>
 
             <div className="relative container mx-auto flex flex-col md:flex-row items-start justify-between p-4 md:p-8">
-                {/* Left Section */}
-                <div className="md:w-1/2 flex flex-col">
+                {/* Left Section for RSET paragraph and girl image */}
+                <div className="md:w-1/2 flex flex-col items-center md:items-start">
                     <h1 className="text-black text-[8vw] md:text-[64px] font-extrabold font-['Roboto']">IEEE SB RSET</h1>
-                    <div className={`mt-4 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <motion.div
+                        initial="initial"
+                        animate={isVisible ? "animate" : "initial"}
+                        variants={fadeInVariants}
+                        className="mt-4 text-center md:text-left"
+                    >
                         <span className="text-black text-[4vw] md:text-[28px] font-extrabold font-['Roboto']">Rajagiri </span>
                         <span className="text-black text-[4vw] md:text-[28px] font-normal font-['Roboto']">
                             School of Engineering & Technology (Autonomous), Kakkanad, Kochi is a premier Institution affiliated to A P J Abdul Kalam Technological University. The University Grants Commission has granted autonomous status to RSET from 2020 onwards. RSET is an AICTE approved college offering excellence in engineering education and research. Undergraduate Programmes offered by the college are NBA accredited, and the college is accredited 'A' grade in the second cycle by NAAC.
                         </span>
-                    </div>
+                    </motion.div>
+                    {/* Girl Image Below the RSET paragraph */}
+                    <img
+                        className="w-full h-auto max-w-md md:max-w-none transition-transform duration-700 ease-in-out hover:scale-105 mt-4 mb-4"
+                        src={girl}
+                        alt="Girl"
+                    />
                 </div>
 
-                {/* Right Section */}
-                <div className="md:w-1/2 flex flex-col items-start justify-start mt-8 md:mt-0">
+                {/* Right Section for RSET image and ASCENDIA paragraph */}
+                <div className="md:w-1/2 flex flex-col items-center md:items-start justify-start mt-8 md:mt-0">
                     <img
-                        className="w-full h-auto transition-transform duration-700 ease-in-out hover:scale-105 mb-4"
+                        className="w-full h-auto max-w-md md:max-w-none transition-transform duration-700 ease-in-out hover:scale-105 mb-4"
                         src={rset}
                         alt="RSET"
                     />
-                    <div className={`mt-4 transition-opacity duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        <h2 className="text-black text-[6vw] md:text-[64px] font-extrabold font-['Roboto']">What is ASCENDIA?</h2>
-                        <motion.p
-                            initial="initial"
-                            animate={isVisible ? "animate" : "initial"}
-                            variants={bubbleVariants}
-                            className="text-black text-[4vw] md:text-[28px] font-normal font-['Roboto'] mt-4"
-                        >
-                            Ascendia is a two-day upskilling camp exclusively designed for girls, focusing on both soft and technical skills development. While women are often celebrated for their commitment and excellence, they sometimes face barriers due to a lack of specific skills. Ascendia aims to bridge these gaps, empowering participants to discover their potential and guide them on a path of personal and professional growth.
-                        </motion.p>
-                        <motion.p
-                            initial="initial"
-                            animate={isVisible ? "animate" : "initial"}
-                            variants={bubbleVariants}
-                            className="text-black text-[4vw] md:text-[28px] font-normal font-['Roboto'] mt-4"
-                        >
-                            Through dynamic workshops, hands-on technical training, and engaging activities handled by professionals, Ascendia helps participants build confidence and equips them with tools to excel. This event fosters an environment where learning is both fun and impactful, preparing girls to rise up and lead the future with confidence.
-                        </motion.p>
-                    </div>
-                    
+                    <h2 className="text-black text-[6vw] md:text-[64px] font-extrabold font-['Roboto'] text-center md:text-left">What is ASCENDIA?</h2>
+                    <motion.p
+                        initial="initial"
+                        animate={isVisible ? "animate" : "initial"}
+                        variants={bubbleVariants}
+                        className="text-black text-[4vw] md:text-[28px] font-normal font-['Roboto'] mt-4 text-center md:text-left"
+                    >
+                        Ascendia is a two-day upskilling camp exclusively designed for girls, focusing on both soft and technical skills development. While women are often celebrated for their commitment and excellence, they sometimes face barriers due to a lack of specific skills. Ascendia aims to bridge these gaps, empowering participants to discover their potential and guide them on a path of personal and professional growth.
+                    </motion.p>
                 </div>
-                
             </div>
-
-            {/* Girl Image for both Mobile and Web View */}
-            <img
-                className="hidden md:block w-auto h-auto mt-4 transition-transform duration-700 ease-in-out hover:scale-105"
-                src={girl}
-                alt="Girl"
-            />
-            <img
-                className="md:hidden w-auto h-auto mt-4 transition-transform duration-700 ease-in-out hover:scale-105"
-                src={girl}
-                alt="Girl"
-            />
         </div>
     );
 }
