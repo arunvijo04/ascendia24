@@ -7,8 +7,8 @@ function Contact() {
             <div className="absolute inset-0 bg-[#ecc9eb]/40" />
 
             {/* Title */}
-            <div className="absolute bottom-0 w-full text-center">
-                <div className="text-white text-[20vw] md:text-[28vw] font-extrabold tracking-tight font-['Poppins'] z-0 pointer-events-none">
+            <div className="absolute inset-0 w-full h-full flex items-center justify-center md:justify-start">
+                <div className="text-white text-[20vw] md:text-[28vw] font-extrabold tracking-tight font-['Poppins'] z-0 pointer-events-none md:ml-8">
                     Contact
                 </div>
             </div>
@@ -20,7 +20,7 @@ function Contact() {
                     <iframe
                         title="Google Map"
                         className="w-full h-full rounded-lg"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345098003!2d144.9537363153185!3d-37.8172099797518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f7cbd75%3A0x5045675218ceedb!2sRMIT%20University%20-%20Melbourne%20City%20Campus!5e0!3m2!1sen!2sau!4v1631950836170!5m2!1sen!2sau"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.9770878101285!2d76.34925391479104!3d9.99821269285732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d816d6f3b63%3A0xf4a39a5b4a066a1c!2sRajagiri%20School%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1696759691739!5m2!1sen!2sin"
                         allowFullScreen=""
                         loading="lazy"
                     ></iframe>
@@ -63,9 +63,11 @@ function Contact() {
             </div>
 
             {/* Copyright Information */}
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-black text-sm md:text-xl font-semibold font-['Poppins'] text-center">
-                <div>COPYRIGHT WIE RSET. ALL RIGHTS RESERVED.</div>
-                <div>DESIGNED BY ARUN VIJO</div>
+            <div className="absolute bottom-0 w-full text-center p-4">
+                <div className="text-black text-sm md:text-xl font-semibold font-['Poppins']">
+                    <div>COPYRIGHT WIE RSET. ALL RIGHTS RESERVED.</div>
+                    <div>DESIGNED BY ARUN VIJO</div>
+                </div>
             </div>
         </div>
     );

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-scroll'; // Import Link from react-scroll
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // Icons for hamburger and close
-import logo from '../assets/logo.png'; // Ensure to use your logo here
+import { Link } from 'react-scroll';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import logo from '../assets/logo.png';
 
 function Nav() {
-    const [navOpen, setNavOpen] = useState(false); // State to toggle the menu
+    const [navOpen, setNavOpen] = useState(false);
 
     const toggleNav = () => {
-        setNavOpen(!navOpen); // Toggles menu on click
+        setNavOpen(!navOpen);
     };
 
     return (
@@ -17,46 +17,32 @@ function Nav() {
 
             {/* Hamburger Icon for Mobile */}
             <div className="md:hidden cursor-pointer text-3xl text-black" onClick={toggleNav}>
-                {navOpen ? <AiOutlineClose /> : <AiOutlineMenu />} {/* Toggle between hamburger and close icon */}
+                {navOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
             </div>
 
             {/* Navigation Links */}
             <nav className={`md:flex items-center space-x-8 absolute md:relative left-0 w-full md:w-auto bg-white md:bg-transparent transition-all duration-500 ease-in-out ${navOpen ? 'top-[70px] opacity-100' : 'top-[-100%] opacity-0'} md:opacity-100 md:top-0`}>
+                {['home', 'about', 'event', 'contact'].map(section => (
+                    <Link 
+                        key={section}
+                        to={section}
+                        smooth={true}
+                        duration={500}
+                        className="relative block md:inline-block text-black text-[10px] md:text-4xl font-rubik-mono-two-regular cursor-pointer hover:text-[#a594f9] transition duration-300 ease-in-out"
+                        onClick={toggleNav}
+                    >
+                        {section.toUpperCase()}
+                        <span className="absolute inset-0 bg-transparent hover:bg-[#a594f9] transition duration-300 ease-in-out" style={{ borderRadius: '5px' }}></span>
+                    </Link>
+                ))}
                 <Link 
-                    to="hero" 
+                    to="register" 
                     smooth={true} 
                     duration={500} 
-                    className="block md:inline-block text-black text-[20px] md:text-4xl font-medium font-['Rubik'] cursor-pointer hover:text-[#a594f9] transition duration-300 ease-in-out"
+                    className="relative block md:inline-block text-white bg-[#a594f9] px-4 py-2 rounded-md text-lg font-medium cursor-pointer hover:bg-[#8a7bd3] transition duration-300 ease-in-out"
                     onClick={toggleNav}
                 >
-                    HOME
-                </Link>
-                <Link 
-                    to="about" 
-                    smooth={true} 
-                    duration={500} 
-                    className="block md:inline-block text-black text-[20px] md:text-4xl font-medium font-['Rubik'] cursor-pointer hover:text-[#a594f9] transition duration-300 ease-in-out"
-                    onClick={toggleNav}
-                >
-                    ABOUT
-                </Link>
-                <Link 
-                    to="event" 
-                    smooth={true} 
-                    duration={500} 
-                    className="block md:inline-block text-black text-[20px] md:text-4xl font-medium font-['Rubik'] cursor-pointer hover:text-[#a594f9] transition duration-300 ease-in-out"
-                    onClick={toggleNav}
-                >
-                    EVENT
-                </Link>
-                <Link 
-                    to="contact" 
-                    smooth={true} 
-                    duration={500} 
-                    className="block md:inline-block text-black text-[20px] md:text-4xl font-medium font-['Rubik'] cursor-pointer hover:text-[#a594f9] transition duration-300 ease-in-out"
-                    onClick={toggleNav}
-                >
-                    CONTACT
+                    REGISTER NOW
                 </Link>
             </nav>
         </div>

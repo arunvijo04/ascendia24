@@ -42,10 +42,10 @@ function Hero() {
 
             {/* Content Container */}
             <div className="bg-[#f5e4f5] rounded-[45px] p-8 relative z-10 flex flex-col items-center text-center mx-4 md:mx-0">
-                <h1 className="text-[#05709c] text-[10vw] md:text-[160px] font-extrabold font-['Oswald'] transform transition-transform duration-700 ease-in-out hover:scale-105">
+                <h1 className="text-[#05709c] text-[10vw] md:text-[160px] font-extrabold font-rubik-mono-one-regular transform transition-transform duration-700 ease-in-out hover:scale-105">
                     ASCENDIA
                 </h1>
-                <div className="mt-2 flex items-center justify-center text-[4vw] md:text-5xl font-medium font-['Roboto']">
+                <div className="mt-2 flex items-center justify-center text-[4vw] md:text-5xl font-medium font-['Rubik']">
                     {description.split('').map((char, index) => (
                         <motion.span
                             key={index}
@@ -65,7 +65,7 @@ function Hero() {
                     onClick={handleRegisterClick}
                     className="mt-4 w-[80vw] md:w-[319px] h-[8vh] md:h-[72.39px] bg-[#e0ade0] rounded-[20px] flex justify-center items-center shadow-md hover:bg-[#d295d2] hover:scale-105 transition-transform duration-300"
                 >
-                    <span className="text-black text-[4vw] md:text-[40px] font-extrabold font-['Roboto']">Register Now</span>
+                    <span className="text-black text-[4vw] md:text-[40px] font-extrabold font-['Rubik']">Register Now</span>
                 </button>
             </div>
 

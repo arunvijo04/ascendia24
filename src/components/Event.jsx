@@ -16,29 +16,39 @@ function Event() {
             {/* Flex Container for Event Cards */}
             <div className="flex flex-wrap justify-center items-center w-full max-w-[1500px] mx-auto z-10 relative">
                 {/* Event Card 1 */}
-                <div className="relative bg-[#dce9f5] rounded-[180px] w-[90%] sm:w-[400px] h-[137px] mx-4 mb-4 hover:shadow-xl hover:bg-[#c4d9eb] transition-shadow duration-300 ease-in-out">
-                    <img className="absolute w-[85px] h-[85px] left-4 top-4" src={graduated} alt="Graduated" />
-                    <div className="absolute left-[100px] top-[30px] text-black text-[24px] font-extrabold font-['Roboto']">100+ Students</div>
+                <div className="relative bg-[#dce9f5] rounded-[20px] w-[90%] sm:w-[400px] h-[137px] mx-4 mb-4 hover:shadow-xl hover:bg-[#c4d9eb] transition-shadow duration-300 ease-in-out transform hover:scale-105">
+                    <div className="flex items-center p-4">
+                        <img className="w-[60px] h-[60px] mr-4" src={graduated} alt="Graduated" />
+                        <div className="text-black text-[24px] font-extrabold font-['Roboto']">100+ Students</div>
+                    </div>
                 </div>
                 {/* Event Card 2 */}
-                <div className="relative bg-[#dce9f5] rounded-[180px] w-[90%] sm:w-[400px] h-[137px] mx-4 mb-4 hover:shadow-xl hover:bg-[#c4d9eb] transition-shadow duration-300 ease-in-out">
-                    <img className="absolute w-[92px] h-[92px] right-4 top-4" src={mentoring} alt="Mentoring" />
-                    <div className="absolute left-4 top-[30px] text-black text-[24px] font-extrabold font-['Roboto']">15+ Mentors</div>
+                <div className="relative bg-[#dce9f5] rounded-[20px] w-[90%] sm:w-[400px] h-[137px] mx-4 mb-4 hover:shadow-xl hover:bg-[#c4d9eb] transition-shadow duration-300 ease-in-out transform hover:scale-105">
+                    <div className="flex items-center p-4">
+                        <img className="w-[60px] h-[60px] mr-4" src={mentoring} alt="Mentoring" />
+                        <div className="text-black text-[24px] font-extrabold font-['Roboto']">15+ Mentors</div>
+                    </div>
                 </div>
                 {/* Event Card 3 */}
-                <div className="relative bg-[#dce9f5] rounded-[180px] w-[90%] sm:w-[400px] h-[137px] mx-4 mb-4 hover:shadow-xl hover:bg-[#c4d9eb] transition-shadow duration-300 ease-in-out">
-                    <img className="absolute w-[91px] h-[90px] right-4 top-4" src={workshop} alt="Workshop" />
-                    <div className="absolute left-4 top-[30px] text-black text-[24px] font-extrabold font-['Roboto']">Hands-on Workshops</div>
+                <div className="relative bg-[#dce9f5] rounded-[20px] w-[90%] sm:w-[400px] h-[137px] mx-4 mb-4 hover:shadow-xl hover:bg-[#c4d9eb] transition-shadow duration-300 ease-in-out transform hover:scale-105">
+                    <div className="flex items-center p-4">
+                        <img className="w-[60px] h-[60px] mr-4" src={workshop} alt="Workshop" />
+                        <div className="text-black text-[24px] font-extrabold font-['Roboto']">Hands-on Workshops</div>
+                    </div>
                 </div>
                 {/* Event Card 4 */}
-                <div className="relative bg-[#dce9f5] rounded-[180px] w-[90%] sm:w-[400px] h-[137px] mx-4 mb-4 hover:shadow-xl hover:bg-[#c4d9eb] transition-shadow duration-300 ease-in-out">
-                    <img className="absolute w-[110px] h-[111px] right-4 top-4" src={networking} alt="Networking" />
-                    <div className="absolute left-4 top-[30px] text-black text-[24px] font-extrabold font-['Roboto']">Networking Activities</div>
+                <div className="relative bg-[#dce9f5] rounded-[20px] w-[90%] sm:w-[400px] h-[137px] mx-4 mb-4 hover:shadow-xl hover:bg-[#c4d9eb] transition-shadow duration-300 ease-in-out transform hover:scale-105">
+                    <div className="flex items-center p-4">
+                        <img className="w-[60px] h-[60px] mr-4" src={networking} alt="Networking" />
+                        <div className="text-black text-[24px] font-extrabold font-['Roboto']">Networking Activities</div>
+                    </div>
                 </div>
                 {/* Event Card 5 */}
-                <div className="relative bg-[#dce9f5] rounded-[180px] w-[90%] sm:w-[400px] h-[137px] mx-4 mb-4 hover:shadow-xl hover:bg-[#c4d9eb] transition-shadow duration-300 ease-in-out">
-                    <img className="absolute w-[92px] h-[91px] left-4 top-4" src={extracurricular} alt="Extracurricular" />
-                    <div className="absolute left-[100px] top-[30px] text-black text-[24px] font-extrabold font-['Roboto']">Fun Activities</div>
+                <div className="relative bg-[#dce9f5] rounded-[20px] w-[90%] sm:w-[400px] h-[137px] mx-4 mb-4 hover:shadow-xl hover:bg-[#c4d9f4] transition-shadow duration-300 ease-in-out transform hover:scale-105">
+                    <div className="flex items-center p-4">
+                        <img className="w-[60px] h-[60px] mr-4" src={extracurricular} alt="Extracurricular" />
+                        <div className="text-black text-[24px] font-extrabold font-['Roboto']">Fun Activities</div>
+                    </div>
                 </div>
             </div>
         </div>
