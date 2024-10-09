@@ -35,15 +35,15 @@ function Nav() {
                         <span className="absolute inset-0 bg-transparent hover:bg-[#e0d5f2] transition duration-300 ease-in-out opacity-50" style={{ borderRadius: '5px' }}></span>
                     </Link>
                 ))}
-                <Link 
-                    to="register" 
-                    smooth={true} 
-                    duration={500} 
+                <a 
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfCGC2oZoiIaN5-LHLoPJpMGQf8HqVh-MozqjjtVTzADdM2Mw/viewform" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
                     className="relative block md:inline-block text-white bg-[#a594f9] px-6 py-3 rounded-md text-lg md:text-xl font-sans cursor-pointer hover:bg-[#8a7bd3] transition duration-300 ease-in-out"
                     onClick={toggleNav}
                 >
                     REGISTER NOW
-                </Link>
+                </a>
             </nav>
         </div>
     );

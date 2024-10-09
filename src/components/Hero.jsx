@@ -41,7 +41,7 @@ function Hero() {
             <img className="w-full h-full object-cover absolute top-0 left-0 z-0" src={bg} alt="Background" />
 
             {/* Content Container */}
-            <div className="bg-[#f5e4f5] rounded-[45px] p-8 relative z-10 flex flex-col items-center text-center mx-4 md:mx-0">
+            <div className="bg-[#f5e4f5] rounded-[45px] p-6 md:p-8 relative z-10 flex flex-col items-center text-center mx-2 md:mx-0 shadow-xl hover:shadow-2xl transition-shadow duration-300">
                 <h1 className="text-[#05709c] text-[10vw] md:text-[160px] font-extrabold font-rubik-mono-one-regular transform transition-transform duration-700 ease-in-out hover:scale-105">
                     ASCENDIA
                 </h1>
@@ -63,7 +63,7 @@ function Hero() {
                 </div>
                 <button
                     onClick={handleRegisterClick}
-                    className="mt-4 w-[80vw] md:w-[319px] h-[8vh] md:h-[72.39px] bg-[#e0ade0] rounded-[20px] flex justify-center items-center shadow-md hover:bg-[#d295d2] hover:scale-105 transition-transform duration-300"
+                    className="mt-4 w-[70vw] md:w-[319px] h-[7vh] md:h-[72.39px] bg-[#e0ade0] rounded-[20px] flex justify-center items-center shadow-md hover:bg-[#d295d2] hover:scale-105 transition-transform duration-300"
                 >
                     <span className="text-black text-[4vw] md:text-[40px] font-extrabold font-['Rubik']">Register Now</span>
                 </button>
@@ -72,7 +72,7 @@ function Hero() {
             {/* Modal for Google Form */}
             {isModalOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white rounded-lg p-5 relative w-[90vw] md:w-[640px] h-[80vh] md:h-[600px]">
+                    <div className="bg-white rounded-lg p-5 relative w-[90vw] md:w-[640px] h-[80vh] md:h-[600px] shadow-2xl">
                         <button onClick={closeModal} className="absolute top-2 right-2 text-xl">✖️</button>
                         <iframe
                             title="Registration Form"
