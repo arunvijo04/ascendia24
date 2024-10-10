@@ -60,11 +60,11 @@ function About() {
                         </span>
                     </motion.div>
                     {/* Girl Image Below the RSET paragraph */}
-                        <img
-                            className="bg-white p-4 mt-4 rounded-lg shadow-md w-full h-auto max-w-xs md:max-w-sm transition-transform duration-700 ease-in-out hover:scale-105"
-                            src={girl}
-                            alt="Girl"
-                        />
+                    <img
+                        className="w-full h-auto max-w-md md:max-w-none transition-transform duration-700 ease-in-out hover:scale-105 mt-4 mb-4"
+                        src={girl}
+                        alt="Girl"
+                    />
                 </div>
 
                 {/* Right Section for RSET image and ASCENDIA paragraph */}
