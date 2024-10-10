@@ -59,12 +59,14 @@ function About() {
                             School of Engineering & Technology (Autonomous), Kakkanad, Kochi is a premier institution affiliated to A P J Abdul Kalam Technological University. RSET is an AICTE approved college offering excellence in engineering education and research.
                         </span>
                     </motion.div>
-                    {/* Girl Image Below the RSET paragraph */}
-                    <img
-                        className="w-full h-auto max-w-xs md:max-w-sm transition-transform duration-700 ease-in-out hover:scale-105 mt-4"
-                        src={girl}
-                        alt="Girl"
-                    />
+                    {/* Wrapper for Girl Image with white square */}
+                    <div className="bg-white p-4 mt-4 rounded-lg shadow-md">
+                        <img
+                            className="w-full h-auto max-w-xs md:max-w-sm transition-transform duration-700 ease-in-out hover:scale-105"
+                            src={girl}
+                            alt="Girl"
+                        />
+                    </div>
                 </div>
 
                 {/* Right Section for RSET image and ASCENDIA paragraph */}
