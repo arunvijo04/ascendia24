@@ -99,8 +99,8 @@ function Timeline() {
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-200 h-full"></div>
 
                 {events.map((event, index) => (
-                    <div key={index} className="mb-10 w-full flex justify-between items-center">
-                        <div className="w-1/2 flex justify-end pr-8">
+                    <div key={index} className={`mb-10 w-full flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center`}>
+                        <div className={`w-1/2 flex justify-${index % 2 === 0 ? 'end' : 'start'} pr-8`}>
                             <div className={`p-4 rounded-lg shadow-md ${event.bgColor} w-64`}>
                                 <h3 className="text-xl font-semibold">{event.title}</h3>
                                 <p className="text-sm text-gray-600">{event.date} - {event.time}</p>
@@ -108,12 +108,6 @@ function Timeline() {
                         </div>
                         <div className="relative w-10 h-10 rounded-full bg-[#ecc9eb] flex items-center justify-center border-4 border-white z-10">
                             {event.icon}
-                        </div>
-                        <div className="w-1/2 pl-8">
-                            <div className={`p-4 rounded-lg shadow-md ${event.bgColor} w-64`}>
-                                <h3 className="text-xl font-semibold">{event.title}</h3>
-                                <p className="text-sm text-gray-600">{event.date} - {event.time}</p>
-                            </div>
                         </div>
                     </div>
                 ))}
