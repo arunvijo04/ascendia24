@@ -13,16 +13,14 @@ body {
 /* Mobile View */
 @media (max-width: 768px) {
     nav {
-        top: 70px; /* Ensure it opens just below the navbar */
+        top: 70px;
         transition: top 0.5s ease, opacity 0.5s ease;
     }
     nav .flex {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
         padding: 10px 0; /* Add padding for better touch targets */
     }
     nav a {
         padding: 15px 20px; /* Increase clickable area */
-        width: 100%; /* Ensure full width for links */
-        text-align: center; /* Center text */
     }
 }
