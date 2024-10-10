@@ -3,6 +3,7 @@ import { FaRegCalendarAlt, FaRegClock, FaUtensils, FaGamepad, FaGraduationCap } 
 
 function Timeline() {
     const events = [
+        // Day 1
         {
             date: '18TH OCTOBER 2024',
             time: '5:00 - 6:00',
@@ -38,7 +39,56 @@ function Timeline() {
             icon: <FaGamepad />,
             bgColor: 'bg-[#ffe0f0]',
         },
-        // Add more events as needed
+        // Day 2
+        {
+            date: '19TH OCTOBER 2024',
+            time: '6:15 - 7:00',
+            title: 'Warm Up Activities / Games',
+            icon: <FaGamepad />,
+            bgColor: 'bg-[#ffe0f0]',
+        },
+        {
+            date: '19TH OCTOBER 2024',
+            time: '7:00 - 9:00',
+            title: 'Session 2',
+            icon: <FaRegClock />,
+            bgColor: 'bg-[#ffb3c1]',
+        },
+        {
+            date: '19TH OCTOBER 2024',
+            time: '9:00 - 10:00',
+            title: 'Breakfast',
+            icon: <FaUtensils />,
+            bgColor: 'bg-[#ffe0f0]',
+        },
+        {
+            date: '19TH OCTOBER 2024',
+            time: '10:00 - 1:00',
+            title: 'Session 3',
+            icon: <FaRegClock />,
+            bgColor: 'bg-[#ffb3c1]',
+        },
+        {
+            date: '19TH OCTOBER 2024',
+            time: '1:00 - 2:00',
+            title: 'Lunch',
+            icon: <FaUtensils />,
+            bgColor: 'bg-[#ffe0f0]',
+        },
+        {
+            date: '19TH OCTOBER 2024',
+            time: '2:00 - 4:15',
+            title: 'Session 4',
+            icon: <FaRegClock />,
+            bgColor: 'bg-[#ffb3c1]',
+        },
+        {
+            date: '19TH OCTOBER 2024',
+            time: '4:15',
+            title: 'Closing Ceremony',
+            icon: <FaGraduationCap />,
+            bgColor: 'bg-[#ffe0f0]',
+        },
     ];
 
     return (
