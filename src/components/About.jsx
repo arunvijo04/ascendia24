@@ -62,7 +62,7 @@ function About() {
                     {/* Girl Image Below the RSET paragraph */}
                     <img
                         className="w-full h-auto max-w-md md:max-w-none transition-transform duration-700 ease-in-out hover:scale-105 mt-4 mb-4"
-                        src={girl}
+                        src={rset}
                         alt="Girl"
                     />
                 </div>
@@ -71,7 +71,7 @@ function About() {
                 <div className="md:w-1/2 flex flex-col items-center md:items-start justify-start mt-8 md:mt-0">
                     <img
                         className="w-full h-auto max-w-md md:max-w-none transition-transform duration-700 ease-in-out hover:scale-105 mb-4"
-                        src={rset}
+                        src={girl}
                         alt="RSET"
                     />
                     <h2 className="text-black text-[6vw] md:text-[64px] font-extrabold font-['Roboto'] text-center md:text-left">What is ASCENDIA?</h2>
