@@ -41,7 +41,7 @@ function About() {
         <div id="about" className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden p-4">
             <div className="absolute inset-0 bg-[#ecc9eb]/40 transition-opacity duration-700" />
             <div className="text-white text-[8vw] md:text-[64px] font-black font-rubik-mono-one-regular text-center mb-8">
-                ABOUT
+                about
             </div>
 
             <div className="relative container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -54,9 +54,17 @@ function About() {
                         variants={fadeInVariants}
                         className="mt-2 text-center md:text-left"
                     >
-                        <span className="text-black text-[3vw] md:text-[20px] font-extrabold">Rajagiri</span>
+                        <span className="text-black text-[3vw] md:text-[20px] font-extrabold">Rajagiri </span>
                         <span className="text-black text-[3vw] md:text-[20px] font-normal">
-                            School of Engineering & Technology (Autonomous), Kakkanad, Kochi is a premier institution affiliated to A P J Abdul Kalam Technological University. RSET is an AICTE approved college offering excellence in engineering education and research.
+                            School of Engineering & Technology
+(Autonomous), Kakkanad, Kochi is a premier Institution
+affiliated to A P J Abdul Kalam Technological
+University.The University Grants Commission has granted
+autonomous status to RSET from 2020 onwards. RSET is an
+AICTE approved college offering excellence in engineering
+education and research. Undergraduate Programmes
+offered by the college are NBA accredited and the college
+is accredited 'A' grade in the second cycle by NAAC.
                         </span>
                     </motion.div>
                     {/* Girl Image Below the RSET paragraph */}
@@ -81,7 +89,14 @@ function About() {
                         variants={bubbleVariants}
                         className="text-black text-[3vw] md:text-[20px] font-normal mt-2 text-center md:text-left"
                     >
-                        Ascendia is a two-day upskilling camp designed for girls, focusing on both soft and technical skills development. It aims to bridge skill gaps, empowering participants to discover their potential and guide them on a path of personal and professional growth.
+                        Ascendia is a two-day upskilling camp exclusively
+designed for girls , focusing on both soft and technical
+skills development. While women are often celebrated
+for their commitment and excellence , they sometimes
+face barriers due to lack of specific skills. Ascendia
+aims to bridge these gaps , empowering participants
+to discover their potential and guide them on a path of
+personal and professional growth.
                     </motion.p>
                 </div>
             </div>
