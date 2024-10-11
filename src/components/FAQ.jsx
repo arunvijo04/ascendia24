@@ -31,11 +31,26 @@ function FAQ() {
                 {/* Questions */}
                 <div className="w-full flex flex-col space-y-4">
                     {[
-                        { question: "Registration Cost?", answer: "The registration cost is Rs 300(IEEE members) and Rs 600(Non-IEEE members)." },
-                        { question: "Mode of Camp?", answer: "The hackathon will be conducted offline." },
-                        { question: "Why attend?", answer: "Gain Practical Skills,Expand Network and Build Confidence" },
-                        { question: "Time span of camp?", answer: "2 Day Upskilling Camp" },
-                        { question: "Participation Criteria?", answer: "Any young women engineers eager to grow professionally and personally." },
+                           { 
+        "question": "What is the registration cost for the camp?", 
+        "answer": "The registration cost is Rs 300 for IEEE members and Rs 600 for non-IEEE members." 
+    },
+    { 
+        "question": "What is the format of the camp?", 
+        "answer": "The camp will be conducted offline at the Rajagiri School of Engineering and Technology." 
+    },
+    { 
+        "question": "What are the benefits of attending the camp?", 
+        "answer": "Attendees will gain practical skills, expand their professional network, and build confidence through hands-on learning and workshops." 
+    },
+    { 
+        "question": "How long does the camp last?", 
+        "answer": "The camp spans 2 days, specifically on October 18-19, 2024." 
+    },
+    { 
+        "question": "Who is eligible to participate in the camp?", 
+        "answer": "The camp is designed for young women engineers who are eager to grow both personally and professionally, regardless of their career stage." 
+    }
                     ].map((faq, index) => (
                         <div
                             key={index}
