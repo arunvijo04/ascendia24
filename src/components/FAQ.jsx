@@ -31,11 +31,11 @@ function FAQ() {
                 {/* Questions */}
                 <div className="w-full flex flex-col space-y-4">
                     {[
-                        { question: "Registration Cost?", answer: "The registration cost is $50." },
-                        { question: "Mode of Hackathon?", answer: "The hackathon will be conducted online." },
-                        { question: "Can We Register a Team?", answer: "Yes, you can register a team of up to 4 members." },
-                        { question: "Time Period of Product Development Phase?", answer: "The development phase lasts for 48 hours." },
-                        { question: "Participation Criteria?", answer: "Any student or professional can participate." },
+                        { question: "Registration Cost?", answer: "The registration cost is Rs 300(IEEE members) and Rs 600(Non-IEEE members)." },
+                        { question: "Mode of Camp?", answer: "The hackathon will be conducted offline." },
+                        { question: "Why attend?", answer: "Gain Practical Skills,Expand Network and Build Confidence" },
+                        { question: "Time span of camp?", answer: "2 Day Upskilling Camp" },
+                        { question: "Participation Criteria?", answer: "Any young women engineers eager to grow professionally and personally." },
                     ].map((faq, index) => (
                         <div
                             key={index}
