@@ -43,7 +43,7 @@ function Nav() {
                         className="relative block text-white bg-[#a594f9] px-6 py-3 rounded-md text-lg md:text-xl font-sans cursor-pointer hover:bg-[#8a7bd3] transition duration-300 ease-in-out"
                         onClick={toggleNav}
                     >
-                        REGISTER NOW
+                        REGISTER
                     </a>
                 </div>
             </nav>

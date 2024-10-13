@@ -1,16 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import bg from '../assets/bg.png';
 import { motion } from 'framer-motion';
 
 function Hero() {
-    const [isModalOpen, setModalOpen] = useState(false);
-
     const handleRegisterClick = () => {
-        setModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setModalOpen(false);
+        // Open the Google Form in a new tab
+        window.open('https://docs.google.com/forms/d/e/1FAIpQLSfCGC2oZoiIaN5-LHLoPJpMGQf8HqVh-MozqjjtVTzADdM2Mw/viewform', '_blank');
     };
 
     // Landing page animation settings
@@ -27,7 +22,8 @@ function Hero() {
     };
 
     // Full description text
-    const description = "2 Day Camp organized by WIE RSET";
+    const descriptionBeforeHighlight = "2 Day Camp organized by ";
+    const highlightText = "WIE RSET";
 
     return (
         <motion.div 
@@ -46,7 +42,8 @@ function Hero() {
                     ASCENDIA
                 </h1>
                 <div className="mt-2 flex items-center justify-center text-[4vw] md:text-5xl font-medium font-['Rubik']">
-                    {description.split('').map((char, index) => (
+                    {/* Animation for the description */}
+                    {descriptionBeforeHighlight.split('').map((char, index) => (
                         <motion.span
                             key={index}
                             initial={{ opacity: 0, y: 10 }} // Start from invisible and slightly below
@@ -60,6 +57,34 @@ function Hero() {
                             {char === ' ' ? '\u00A0' : char} {/* Render a non-breaking space for visual consistency */}
                         </motion.span>
                     ))}
+                    {/* Highlighted text with animation */}
+                    {highlightText.split('').map((char, index) => (
+                        <motion.span
+                            key={index}
+                            initial={{ opacity: 0, y: 10 }} // Start from invisible and slightly below
+                            animate={{ opacity: 1, y: 0 }} // Animate to visible and original position
+                            transition={{
+                                duration: 0.5, // Duration for each character animation
+                                delay: (descriptionBeforeHighlight.length + index) * 0.1 // Delay based on character index
+                            }}
+                            style={{ display: 'inline-block', color: '#05709c' }} // Highlighted color
+                        >
+                            {char === ' ' ? '\u00A0' : char}
+                        </motion.span>
+                    ))}
+                    {/* Ensure space between WIE and RSET */}
+                    <motion.span
+                        key="space"
+                        initial={{ opacity: 0, y: 10 }} // Start from invisible and slightly below
+                        animate={{ opacity: 1, y: 0 }} // Animate to visible and original position
+                        transition={{
+                            duration: 0.5,
+                            delay: (descriptionBeforeHighlight.length + highlightText.length) * 0.1 // Adjust delay
+                        }}
+                        style={{ display: 'inline-block' }}
+                    >
+                        {'\u00A0'} {/* Non-breaking space */}
+                    </motion.span>
                 </div>
                 <button
                     onClick={handleRegisterClick}
@@ -68,27 +93,6 @@ function Hero() {
                     <span className="text-black text-[4vw] md:text-[40px] font-extrabold font-['Rubik']">Register Now</span>
                 </button>
             </div>
-
-            {/* Modal for Google Form */}
-            {isModalOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white rounded-lg p-5 relative w-[90vw] md:w-[640px] h-[80vh] md:h-[600px] shadow-2xl">
-                        <button onClick={closeModal} className="absolute top-2 right-2 text-xl">✖️</button>
-                        <iframe
-                            title="Registration Form"
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSfCGC2oZoiIaN5-LHLoPJpMGQf8HqVh-MozqjjtVTzADdM2Mw/viewform?embedded=true"
-                            width="100%"
-                            height="100%"
-                            frameBorder="0"
-                            marginHeight="0"
-                            marginWidth="0"
-                            className="rounded-lg"
-                        >
-                            Loading…
-                        </iframe>
-                    </div>
-                </div>
-            )}
         </motion.div>
     );
 }
