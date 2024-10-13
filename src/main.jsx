@@ -19,7 +19,9 @@ root.render(
     <Hero />
     <About />
     <Event />
+    <Speakers />
     <Timeline />
+    <Sponsors />
     <FAQ />
     <Contact />
   </React.StrictMode>

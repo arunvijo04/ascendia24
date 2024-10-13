@@ -9,10 +9,10 @@ import s4 from '../assets/s4.png';
 
 function Speakers() {
     const speakers = [
-        { name: 'Arun Vijo', image: s1 },
-        { name: 'Rinza', image: s2 },
-        { name: 'Namitha', image: s3 },
-        { name: 'Ashish', image: s4 },
+        { name: 'Rini Sara Markose', image: s1 },
+        { name: 'Ajoe Joseph', image: s2 },
+        { name: 'Vaishnavi Balgia', image: s3 },
+        { name: 'Theertha Avinash', image: s4 },
     ];
 
     return (

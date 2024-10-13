@@ -90,19 +90,28 @@ const Timeline = () => {
     ];
 
     return (
-        <div className="timeline-container">
+        <div className="timeline-container p-6">
             <h1 className="text-center text-4xl font-bold mb-8">Event Timeline</h1>
-            <div className="timeline">
+            <div className="timeline grid grid-cols-1 md:grid-cols-2 gap-8">
                 {events.map((event, index) => (
-                    <div key={index} className={`timeline-item flex items-center mb-8 ${event.bgColor} p-4 rounded-lg`}>
-                        <div className="timeline-icon mr-4 text-2xl text-pink-600">
+                    <div
+                        key={index}
+                        className={`timeline-item relative flex flex-col md:flex-row items-center md:items-start ${event.bgColor} p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 hover:scale-105 transform transition-transform duration-300 ease-out`}
+                    >
+                        <div className="timeline-icon text-4xl text-pink-600 mb-4 md:mb-0 md:mr-4">
                             {event.icon}
                         </div>
+
                         <div className="timeline-content">
                             <div className="date text-lg font-semibold text-gray-700">{event.date}</div>
-                            <div className="time text-md text-gray-500">{event.time}</div>
-                            <div className="title text-xl font-bold">{event.title}</div>
+                            <div className="time text-md text-gray-500 mb-1">{event.time}</div>
+                            <div className="title text-xl font-bold text-pink-700">{event.title}</div>
                         </div>
+
+                        {/* Vertical line connector for large screens */}
+                        {index !== events.length - 1 && (
+                            <span className="hidden md:block absolute left-12 top-full w-1 h-8 bg-pink-600"></span>
+                        )}
                     </div>
                 ))}
             </div>
