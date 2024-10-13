@@ -1,9 +1,8 @@
 import React from 'react';
-import { FaRegCalendarAlt, FaRegClock, FaUtensils, FaGamepad, FaGraduationCap } from 'react-icons/fa';
+import { FaRegCalendarAlt, FaGraduationCap, FaRegClock, FaUtensils, FaGamepad } from 'react-icons/fa';
 
-function Timeline() {
+const Timeline = () => {
     const events = [
-        // Day 1
         {
             date: '18TH OCTOBER 2024',
             time: '5:00 - 6:00',
@@ -39,7 +38,6 @@ function Timeline() {
             icon: <FaGamepad />,
             bgColor: 'bg-[#ffe0f0]',
         },
-        // Day 2
         {
             date: '19TH OCTOBER 2024',
             time: '6:15 - 7:00',
@@ -92,34 +90,24 @@ function Timeline() {
     ];
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-[#fef9fc] p-6">
-            <h2 className="text-4xl font-bold mb-8">Timeline</h2>
-
-            <div className="relative w-full">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-200 h-full"></div>
-
+        <div className="timeline-container">
+            <h1 className="text-center text-4xl font-bold mb-8">Event Timeline</h1>
+            <div className="timeline">
                 {events.map((event, index) => (
-                    <div key={index} className="mb-10 w-full flex justify-between items-center">
-                        <div className="w-1/2 flex justify-end pr-8">
-                            <div className={`p-4 rounded-lg shadow-md ${event.bgColor} w-64`}>
-                                <h3 className="text-xl font-semibold">{event.title}</h3>
-                                <p className="text-sm text-gray-600">{event.date} - {event.time}</p>
-                            </div>
-                        </div>
-                        <div className="relative w-10 h-10 rounded-full bg-[#ecc9eb] flex items-center justify-center border-4 border-white z-10">
+                    <div key={index} className={`timeline-item flex items-center mb-8 ${event.bgColor} p-4 rounded-lg`}>
+                        <div className="timeline-icon mr-4 text-2xl text-pink-600">
                             {event.icon}
                         </div>
-                        <div className="w-1/2 pl-8">
-                            <div className={`p-4 rounded-lg shadow-md ${event.bgColor} w-64`}>
-                                <h3 className="text-xl font-semibold">{event.title}</h3>
-                                <p className="text-sm text-gray-600">{event.date} - {event.time}</p>
-                            </div>
+                        <div className="timeline-content">
+                            <div className="date text-lg font-semibold text-gray-700">{event.date}</div>
+                            <div className="time text-md text-gray-500">{event.time}</div>
+                            <div className="title text-xl font-bold">{event.title}</div>
                         </div>
                     </div>
                 ))}
             </div>
         </div>
     );
-}
+};
 
 export default Timeline;
