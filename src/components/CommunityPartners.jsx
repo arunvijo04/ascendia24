@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import s1 from '../assets/s5.png'; // Ensure the correct path to your images
 import s2 from '../assets/s6.png';
 
-function Sponsors() {
+function CommunityPartners() {
     const sponsors = [
         { name: 'Women Tech Makers', image: s1 },
         { name: 'GDG Kochi', image: s2 },
@@ -14,15 +14,21 @@ function Sponsors() {
     return (
         <div className="w-full min-h-screen relative flex flex-col items-center overflow-hidden p-4 md:p-8">
             {/* Background Overlay with Animation */}
-            <div className="absolute inset-0 bg-[#ecc9eb]/40 opacity-90 animate-fade" />
+            <div className="absolute inset-0 bg-[#ecc9eb]/40 opacity-90 animate-fade z-0" />
 
-            {/* Section Title */}
-            <div className="absolute top-1/2 transform -translate-y-1/2 text-white text-[12vw] md:text-[340px] font-black font-rubik-mono-one-regular w-full text-center">
-                sponsors
+            {/* Section Title for Mobile */}
+            <div className="text-white text-4xl font-black font-rubik-mono-one-regular text-center md:hidden relative z-10 mb-6">
+                Community <br /> Partners
             </div>
 
-            {/* Sponsors Boxes */}
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-10 mt-10 w-full max-w-6xl">
+            {/* Section Title for Larger Screens */}
+            <div className="absolute top-1/2 transform -translate-y-1/2 text-white font-black font-rubik-mono-one-regular w-full text-center leading-none hidden md:block z-10">
+                <div className="text-[12vw] md:text-[160px]">community</div>
+                <div className="text-[12vw] md:text-[160px]">partners</div>
+            </div>
+
+            {/* Community Partners Boxes */}
+            <div className="relative z-20 grid grid-cols-1 sm:grid-cols-2 gap-10 mt-10 w-full max-w-6xl">
                 {sponsors.map((sponsor, index) => (
                     <motion.div
                         key={index}
@@ -59,4 +65,4 @@ function Sponsors() {
     );
 }
 
-export default Sponsors;
+export default CommunityPartners;

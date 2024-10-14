@@ -10,8 +10,13 @@ function FAQ() {
 
     return (
         <div className="w-full min-h-screen flex flex-col md:flex-row items-center bg-white relative">
-            {/* FAQ Background Text */}
-            <div className="absolute inset-0 flex items-center justify-center z-0">
+            {/* FAQ Title for Mobile */}
+            <div className="text-black text-4xl font-black font-rubik-mono-one-regular text-center md:hidden relative z-10 mt-8">
+                FAQ
+            </div>
+
+            {/* FAQ Background Text for Larger Screens */}
+            <div className="absolute inset-0 hidden md:flex items-center justify-center z-0">
                 <div className="text-[#ecc9eb]/40 text-[20vw] md:text-[500px] font-black font-rubik-mono-one-regular text-center">
                     faq
                 </div>

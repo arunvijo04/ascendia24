@@ -17,11 +17,16 @@ function Speakers() {
 
     return (
         <div className="w-full min-h-screen relative flex flex-col items-center overflow-hidden p-4 md:p-8">
+            {/* Speakers Title for Mobile */}
+            <div className="text-black text-4xl font-black font-rubik-mono-one-regular text-center md:hidden relative z-10 mt-8">
+                Speakers
+            </div>
+
             {/* Background Overlay with Animation */}
             <div className="absolute inset-0 bg-[#ecc9eb]/40 opacity-90 animate-fade" />
 
-            {/* Section Title */}
-            <div className="absolute top-1/2 transform -translate-y-1/2 text-white text-[12vw] md:text-[350px] font-black font-rubik-mono-one-regular w-full text-center">
+            {/* Section Title for Larger Screens */}
+            <div className="absolute top-1/2 transform -translate-y-1/2 text-white text-[12vw] md:text-[350px] font-black font-rubik-mono-one-regular w-full text-center hidden md:block">
                 speakers
             </div>
 

@@ -7,7 +7,7 @@ import About from './components/About';
 import Event from './components/Event';
 import Speakers from './components/Speakers'; 
 import Timeline from './components/Timeline';
-import Sponsors from './components/Sponsors';
+import CommunityPartners from './components/CommunityPartners';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 
@@ -21,7 +21,7 @@ root.render(
     <Event />
     <Speakers />
     <Timeline />
-    <Sponsors />
+    <CommunityPartners />
     <FAQ />
     <Contact />
   </React.StrictMode>

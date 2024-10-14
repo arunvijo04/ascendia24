@@ -39,17 +39,21 @@ function About() {
 
     return (
         <div id="about" className="relative w-full min-h-screen overflow-hidden">
+            {/* About Title for Mobile */}
+            <div className="text-black text-4xl font-black font-rubik-mono-one-regular text-center md:hidden relative z-10 mt-8">
+                About
+            </div>
+
             {/* Background Overlay */}
             <div className="absolute inset-0 bg-[#ecc9eb]/40 transition-opacity duration-700" />
 
-            {/* Section title */}
-            <div className="absolute top-1/2 transform -translate-y-1/2 text-white text-[12vw] md:text-[500px] font-black font-rubik-mono-one-regular w-full text-center">
+            {/* Section Title for Larger Screens */}
+            <div className="absolute top-1/2 transform -translate-y-1/2 text-white text-[12vw] md:text-[500px] font-black font-rubik-mono-one-regular w-full text-center hidden md:block">
                 about
             </div>
 
             {/* Grid layout */}
             <div className="relative container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-4 md:p-8">
-                
                 {/* Top left: RSET paragraph */}
                 <motion.div
                     initial="initial"
