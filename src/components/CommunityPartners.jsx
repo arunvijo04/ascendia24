@@ -23,8 +23,8 @@ function CommunityPartners() {
 
             {/* Section Title for Larger Screens */}
             <div className="absolute top-1/2 transform -translate-y-1/2 text-white font-black font-rubik-mono-one-regular w-full text-center leading-none hidden md:block z-10">
-                <div className="text-[12vw] md:text-[160px]">community</div>
-                <div className="text-[12vw] md:text-[160px]">partners</div>
+                <div className="text-[12vw] md:text-[250px]">community</div>
+                <div className="text-[12vw] md:text-[300px]">partners</div>
             </div>
 
             {/* Community Partners Boxes */}

@@ -11,13 +11,13 @@ function FAQ() {
     return (
         <div className="w-full min-h-screen flex flex-col md:flex-row items-center bg-white relative">
             {/* FAQ Title for Mobile */}
-            <div className="text-black text-4xl font-black font-rubik-mono-one-regular text-center md:hidden relative z-10 mt-8">
+            <div className="text-black text-4xl font-rubik text-center md:hidden relative z-10 mt-8">
                 FAQ
             </div>
 
             {/* FAQ Background Text for Larger Screens */}
             <div className="absolute inset-0 hidden md:flex items-center justify-center z-0">
-                <div className="text-[#ecc9eb]/40 text-[20vw] md:text-[500px] font-black font-rubik-mono-one-regular text-center">
+                <div className="text-[#ecc9eb]/40 text-[20vw] md:text-[500px] font-rubik text-center">
                     faq
                 </div>
             </div>
@@ -37,35 +37,38 @@ function FAQ() {
                 <div className="w-full flex flex-col space-y-4">
                     {[
                         { 
-                            "question": "What is the registration cost?", 
-                            "answer": "Rs 300 for IEEE members and Rs 600 for non-members." 
+                            "question": "What is the registration cost for attending the camp, and are there any discounts available?", 
+                            "answer": "The registration cost is Rs 300 for IEEE members and Rs 600 for non-members. Early bird registration is available for Rs 250 for members." 
                         },
                         { 
-                            "question": "What is the camp format?", 
-                            "answer": "The camp is offline at Rajagiri School of Engineering." 
+                            "question": "Can you describe the camp format? Will there be any hands-on activities or workshops?", 
+                            "answer": "The camp will be held offline at Rajagiri School of Engineering and will include a mix of workshops, guest lectures, and hands-on activities to enhance learning." 
                         },
                         { 
-                            "question": "What are the benefits?", 
-                            "answer": "Gain practical skills and expand your network." 
+                            "question": "What specific benefits can participants expect from attending this camp?", 
+                            "answer": "Participants will gain practical skills in engineering, have networking opportunities with professionals, and receive certificates upon completion." 
                         },
                         { 
-                            "question": "How long is the camp?", 
-                            "answer": "The camp lasts 2 days: October 18-19, 2024." 
+                            "question": "How long is the camp scheduled to last, and what are the daily timings?", 
+                            "answer": "The camp lasts for 2 days from October 18-19, 2024, with sessions running from 9 AM to 5 PM each day." 
                         },
                         { 
-                            "question": "Who can participate?", 
-                            "answer": "Young women engineers eager to grow personally and professionally." 
+                            "question": "Who is eligible to participate in this camp, and are there any prerequisites?", 
+                            "answer": "The camp is designed for young women engineers eager to grow personally and professionally. No specific prerequisites are required, but a basic understanding of engineering principles is beneficial." 
                         }
                     ].map((faq, index) => (
                         <div
                             key={index}
-                            className={`relative w-full p-4 bg-[#ffe0f0] rounded-[20px] border-4 border-[#ffb3c1] transition-all duration-300 transform-style-3d cursor-pointer ${activeQuestion === index ? 'flipped' : ''}`}
+                            className={`relative w-full p-5 bg-[#f5e1f5] rounded-[15px] border-4 border-[#ffb3c1] transition-all duration-300 cursor-pointer hover:bg-[#ffe0f0] ${activeQuestion === index ? 'shadow-lg' : ''}`}
                             onClick={() => toggleQuestion(index)}
                         >
-                            <div className="front face w-full h-full text-black text-xl md:text-2xl font-medium font-['Montserrat'] flex justify-center items-center">
+                            {/* Front Side: Question */}
+                            <div className="front face w-full h-full text-black text-lg md:text-xl font-rubik flex justify-center items-center">
                                 {faq.question}
                             </div>
-                            <div className={`back face w-full h-full absolute top-0 left-0 p-4 bg-[#ffc9d9] text-black text-base rounded-[20px] flex items-center justify-center transition-opacity duration-300 ${activeQuestion === index ? 'opacity-100' : 'opacity-0'}`}>
+                            
+                            {/* Back Side: Answer */}
+                            <div className={`back face w-full h-full absolute top-0 left-0 p-5 bg-[#ffc9d9] text-black text-base md:text-lg rounded-[15px] flex items-center justify-center transition-opacity duration-300 ${activeQuestion === index ? 'opacity-100' : 'opacity-0'}`}>
                                 {faq.answer}
                             </div>
                         </div>

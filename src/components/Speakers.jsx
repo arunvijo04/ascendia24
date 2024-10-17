@@ -2,60 +2,103 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Import images from assets folder
-import s1 from '../assets/s1.png'; // Ensure the correct path to your images
+import s1 from '../assets/s1.png';
 import s2 from '../assets/s2.png';
 import s3 from '../assets/s3.png';
 import s4 from '../assets/s4.png';
+import s7 from '../assets/s7.png';
 
 function Speakers() {
     const speakers = [
+        { name: 'Aswathy Sreekanth', image: s7 },
         { name: 'Rini Sara Markose', image: s1 },
         { name: 'Ajoe Joseph', image: s2 },
         { name: 'Vaishnavi Balgia', image: s3 },
         { name: 'Theertha Avinash', image: s4 },
+        { name: 'Rini Sara Markose', image: s1 },
     ];
 
     return (
-        <div className="w-full min-h-screen relative flex flex-col items-center overflow-hidden p-4 md:p-8">
-            {/* Speakers Title for Mobile */}
-            <div className="text-black text-4xl font-black font-rubik-mono-one-regular text-center md:hidden relative z-10 mt-8">
+        <div className="relative w-full min-h-screen flex flex-col items-center p-8 md:p-16 bg-gradient-to-b from-white via-purple-50 to-purple-100">
+            {/* Title for Mobile */}
+            <div className="text-black text-4xl md:text-5xl font-bold font-rubik-mono-one-regular text-center relative z-10 mt-8 mb-10">
                 Speakers
             </div>
 
-            {/* Background Overlay with Animation */}
-            <div className="absolute inset-0 bg-[#ecc9eb]/40 opacity-90 animate-fade" />
-
-            {/* Section Title for Larger Screens */}
-            <div className="absolute top-1/2 transform -translate-y-1/2 text-white text-[12vw] md:text-[350px] font-black font-rubik-mono-one-regular w-full text-center hidden md:block">
-                speakers
+            {/* Background "Speakers" Text */}
+            <div className="absolute inset-0 hidden md:flex items-center justify-center z-0">
+                <div className="text-[#ecc9eb]/40 text-[20vw] md:text-[300px] font-black font-rubik-mono-one-regular text-center">
+                    speakers
+                </div>
             </div>
 
-            {/* Speakers Boxes */}
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-10 w-full max-w-6xl">
-                {speakers.map((speaker, index) => (
-                    <motion.div
-                        key={index}
-                        className="relative w-full h-[220px] sm:h-[321px] bg-[#ecc9f5]/40 rounded-[30px] sm:rounded-[60px] border-8 border-white overflow-hidden group"
-                        whileHover={{ scale: 1.05 }} // Hover effect
-                        initial={{ opacity: 0, y: 20 }} // Initial landing effect
-                        animate={{ opacity: 1, y: 0 }} // Animate to visible
-                        transition={{ 
-                            duration: 0.3, // Duration for both initial and hover transitions
-                            delay: index * 0.1 // Staggered effect
-                        }}
-                    >
-                        {/* Image Placeholder */}
-                        <img
-                            src={speaker.image}
-                            alt={speaker.name}
-                            className="absolute inset-0 w-full h-full object-cover"
-                        />
-                        {/* Speaker Name */}
-                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-xl font-semibold text-black bg-white bg-opacity-70 px-2 rounded">
-                            {speaker.name}
-                        </div>
-                    </motion.div>
-                ))}
+            {/* Inverted Pyramid Speakers Grid */}
+            <div className="relative z-10 w-full max-w-6xl">
+                {/* Top Row - 2 Speakers */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center">
+                    {speakers.slice(0, 2).map((speaker, index) => (
+                        <motion.div
+                            key={index}
+                            className="relative w-full h-[300px] md:h-[350px] bg-white shadow-lg rounded-[40px] overflow-hidden group"
+                            whileHover={{ scale: 1.03 }} // Hover effect
+                            initial={{ opacity: 0, y: 30 }} // Initial effect
+                            animate={{ opacity: 1, y: 0 }} // Animate in
+                            transition={{ 
+                                duration: 0.4, // Smooth transition
+                                delay: index * 0.1 // Staggered effect
+                            }}
+                        >
+                            {/* Speaker Image */}
+                            <div className="relative w-full h-full overflow-hidden">
+                                <img
+                                    src={speaker.image}
+                                    alt={speaker.name}
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+                                />
+                                {/* Dark Overlay for better text visibility */}
+                                <div className="absolute inset-0 bg-black opacity-20" />
+                            </div>
+
+                            {/* Speaker Name */}
+                            <div className="absolute bottom-0 w-full text-center py-3 text-white font-bold text-2xl">
+                                {speaker.name}
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+
+                {/* Bottom Row - 3 Speakers */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8 justify-center">
+                    {speakers.slice(2, 5).map((speaker, index) => (
+                        <motion.div
+                            key={index}
+                            className="relative w-full h-[300px] md:h-[350px] bg-white shadow-lg rounded-[40px] overflow-hidden group"
+                            whileHover={{ scale: 1.03 }} // Hover effect
+                            initial={{ opacity: 0, y: 30 }} // Initial effect
+                            animate={{ opacity: 1, y: 0 }} // Animate in
+                            transition={{ 
+                                duration: 0.4, // Smooth transition
+                                delay: (index + 2) * 0.1 // Staggered effect
+                            }}
+                        >
+                            {/* Speaker Image */}
+                            <div className="relative w-full h-full overflow-hidden">
+                                <img
+                                    src={speaker.image}
+                                    alt={speaker.name}
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105"
+                                />
+                                {/* Dark Overlay for better text visibility */}
+                                <div className="absolute inset-0 bg-black opacity-20" />
+                            </div>
+
+                            {/* Speaker Name */}
+                            <div className="absolute bottom-0 w-full text-center py-3 text-white font-bold text-2xl">
+                                {speaker.name}
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
 
             {/* CSS keyframe animation for fade-in effect */}
