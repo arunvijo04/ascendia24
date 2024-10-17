@@ -91,7 +91,7 @@ const Timeline = () => {
 
     return (
         <div className="timeline-container p-6">
-            <h1 className="text-center text-4xl font-bold mb-8">Event Timeline</h1>
+            <h1 className="text-center text-4xl font-bold mb-8">EVENT TIMELINE</h1>
             <div className="timeline grid grid-cols-1 md:grid-cols-2 gap-8">
                 {events.map((event, index) => (
                     <div

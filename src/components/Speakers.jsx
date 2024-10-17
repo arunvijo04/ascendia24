@@ -22,12 +22,12 @@ function Speakers() {
         <div className="relative w-full min-h-screen flex flex-col items-center p-8 md:p-16 bg-gradient-to-b from-white via-purple-50 to-purple-100">
             {/* Title for Mobile */}
             <div className="text-black text-4xl md:text-5xl font-bold font-rubik-mono-one-regular text-center relative z-10 mt-8 mb-10">
-                Speakers
+                SPEAKERS
             </div>
 
             {/* Background "Speakers" Text */}
             <div className="absolute inset-0 hidden md:flex items-center justify-center z-0">
-                <div className="text-[#ecc9eb]/40 text-[20vw] md:text-[300px] font-black font-rubik-mono-one-regular text-center">
+                <div className="text-white text-[20vw]  font-extrabold font-rubik text-center">
                     speakers
                 </div>
             </div>

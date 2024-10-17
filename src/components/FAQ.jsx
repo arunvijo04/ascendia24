@@ -17,7 +17,7 @@ function FAQ() {
 
             {/* FAQ Background Text for Larger Screens */}
             <div className="absolute inset-0 hidden md:flex items-center justify-center z-0">
-                <div className="text-[#ecc9eb]/40 text-[20vw] md:text-[500px] font-rubik text-center">
+                <div className="text-[#ecc9eb]/40 text-[20vw] md:text-[500px] font-extrabold font-rubik text-center">
                     faq
                 </div>
             </div>
